@@ -5,7 +5,7 @@
   <li>
     <h3>categories</h3>
     <ul>
-{% for category, arts in categories %}
+{% for category, arts in categories|sort %}
       <li>
       <h3><a href="{{ SITEURL }}/category/{{ category }}.html">{{ category }}</a></h3>
         <ul>
@@ -23,7 +23,7 @@
   <li>
     <h3>tags</h3>
     <ul>
-{% for tag, arts in tags %}
+{% for tag, arts in tags|sort %}
       <li>
       <h3><a href="{{ SITEURL }}/tag/{{ tag }}.html">{{ tag }}</a></h3>
         <ul>
@@ -41,7 +41,7 @@
     <li>
     <h3><a href="{{ SITEURL }}/seminars">seminars</a></h3>
     <ul>
-      {% for name, loc in SEMINARS %}
+      {% for name, loc in SEMINARS|sort %}
       <li><a href="{{ SITEURL }}/seminars/{{ loc }}">{{ name }}</a></li>
       {% endfor %}
     </ul>
