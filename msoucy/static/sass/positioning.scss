@@ -95,6 +95,12 @@ main {
   float: right;
 }
 
+@media only screen and (max-width: $max-screen-size) {
+  .subheadline {
+    display: none;
+  }
+}
+
 @mixin mobile {
   .no-mobile {
     display: none;
