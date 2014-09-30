@@ -75,6 +75,10 @@ article {
   padding: 1em;
 }
 
+.codehilite pre {
+	overflow-x: scroll;
+}
+
 main {
   width: auto;
   margin: 0 auto;
