@@ -38,7 +38,7 @@
 {% endfor %}
     </ul>
   </li>
-    <li>
+  <li>
     <h3><a href="{{ SITEURL }}/seminars">seminars</a></h3>
     <ul>
       {% for name, loc in SEMINARS|sort %}
@@ -46,6 +46,16 @@
       {% endfor %}
     </ul>
   </li>
+{% if LINKS %}
+  <li>
+    <h3>links</h3>
+	<ul>
+{% for ttl, lnk in LINKS %}
+      <li><a href="{{ lnk }}">{{ ttl }}</a></li>
+{% endfor %}
+	</ul>
+  </li>
+{% endif %}
   <li>
     <h3><a href="{{ SITEURL }}/about">about</a></h3>
     <ul>
