@@ -205,8 +205,16 @@ h3 {
   };
 }
 
-article h3 {
-  margin-left: 1em;
+article {
+  h3 {
+    margin-left: 1em;
+  }
+  .spoiler {
+    background: black;
+  }
+  .spoiler:hover {
+    background: transparent;
+  }
 }
 
 .prevnextparts {
