@@ -1,9 +1,12 @@
 <div class="prevnextparts">
   <hr />
-  {% if article.metadata.parts_articles %}
-    <p><i>This post is part of a series:</i></p>
+  {% if article.series %}
+  <p><em>
+	This post is part {{ article.series.index }}/{{ article.series.all|length }}
+	 of the series on {{ article.series.name }}:
+  </em></p>
     <ol class="parts">
-        {% for part_article in article.metadata.parts_articles %}
+        {% for part_article in article.series.all %}
             <li {% if part_article == article %}class="active"{% endif %}>
                 <a href='{{ SITEURL }}/{{ part_article.url }}'>{{ part_article.title }}</a>
             </li>
