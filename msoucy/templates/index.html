@@ -2,9 +2,9 @@
 {% block content_title %}{% endblock %}
 {% block content %}
 {% set article = articles[0] %}
-<article>
+<article itemid="mainEntityOfPage" itemscope itemtype="http://schema.org/Article">
   {% include 'article_infos.html' %}
   {{ article.content }}
   {% include 'neighbors.html' %}
 </article>
-{% endblock content %}
+{% endblock %}

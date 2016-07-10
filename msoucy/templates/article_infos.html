@@ -1,8 +1,16 @@
-<h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+<h2 itemprop="name headline" property="name headline"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
 <div id="meta">
-	<abbr class="published" title="{{ article.date.isoformat() }}">
-		<time datetime="{{article.date.isoformat()}}">{{ article.locale_date }}</time>
-	</abbr>
-	in {{ article.category }} -
-	<a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Comments</a>
+    <link itemprop="mainEntityOfPage" href="{{ SITEURL }}/{{ article.url}}" />
+    <abbr class="published" title="{{ article.date.isoformat() }}">
+    <time itemprop="datePublished dateModified"
+          property="datePublished dateModified"
+          datetime="{{article.date.isoformat()}}">{{ article.locale_date }}</time>
+    </abbr>
+    in {{ article.category }} by
+    <span itemprop="author publisher"
+          property="author publisher"
+          itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">{{ article.author }}</span>
+    </span> -
+    <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Comments</a>
 </div>
