@@ -2,14 +2,16 @@
 
     <!-- Taken from https://moz.com/blog/meta-data-templates-123 -->
 
+{% if 'twitter' in AUTHOR_DATA %}
 	<!-- Twitter Card data -->
 	<meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@{{AUTHOR_DATA.twitter}}" />
+    <meta name="twitter:site" content="@{{AUTHOR_DATA['twitter']}}" />
 	<meta name="twitter:title" content="{{ page.title() }}"/>
 	<meta name="twitter:description" content="{{ page.description() }}"/>
-    <meta name="twitter:creator" content="@{{AUTHOR_DATA.twitter}}" />
+    <meta name="twitter:creator" content="@{{AUTHOR_DATA['twitter']}}" />
 	<!-- Twitter summary card with large image must be at least 280x150px -->
 	<meta name="twitter:image:src" content="{{ META_IMAGE }}"/>
+{% endif %}
 
 	<!-- Open Graph data -->
 	<meta property="og:type" content="article" />

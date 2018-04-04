@@ -49,20 +49,19 @@
 {% if LINKS %}
   <li>
     <h3>links</h3>
-	<ul>
+  <ul>
 {% for ttl, lnk in LINKS %}
       <li><a href="{{ lnk }}">{{ ttl }}</a></li>
 {% endfor %}
-	</ul>
+  </ul>
   </li>
 {% endif %}
   <li>
     <h3><a href="{{ SITEURL }}/about">about</a></h3>
     <ul>
-      <li><a href="mailto:{{ AUTHOR_DATA['email'] }}">email</a></li>
-      <li><a href="{{ SITEURL }}/extras/resume.pdf">resume</a></li>
-      <li><a href="http://www.linkedin.com/in/{{ AUTHOR_DATA['linkedin'] }}">linkedin</a></li>
-      <li><a href="{{ AUTHOR_DATA['g+'] }}">google+</a></li>
+{% for text, link in AUTHOR_DATA.items() %}
+      <li><a href="{{ link }}">{{ text }}</a></li>
+{% endfor %}
     </ul>
   </li>
 </ul>
