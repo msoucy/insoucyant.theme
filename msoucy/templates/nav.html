@@ -60,7 +60,7 @@
     <h3><a href="{{ SITEURL }}/about">about</a></h3>
     <ul>
 {% for text, link in AUTHOR_DATA.items() %}
-      <li><a href="{{ link }}">{{ text }}</a></li>
+      <li><a rel="me" href="{{ link }}">{{ text }}</a></li>
 {% endfor %}
     </ul>
   </li>
