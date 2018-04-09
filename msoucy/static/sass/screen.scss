@@ -208,6 +208,9 @@ h3 {
 }
 
 article {
+	h1 {
+		border-bottom: 2px solid $head_bottom_border;
+	}
 	h3 {
 		margin-left: 1em;
 	}
