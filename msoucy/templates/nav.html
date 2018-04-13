@@ -39,7 +39,7 @@
     </ul>
   </li>
   <li>
-    <h3><a href="{{ SITEURL }}/seminars">seminars</a></h3>
+    <h3>seminars</h3>
     <ul>
       {% for name, loc in SEMINARS|sort %}
       <li><a href="{{ SITEURL }}/seminars/{{ loc }}">{{ name }}</a></li>
@@ -57,7 +57,7 @@
   </li>
 {% endif %}
   <li>
-    <h3><a href="{{ SITEURL }}/about">about</a></h3>
+    <h3>about</h3>
     <ul>
 {% for text, link in AUTHOR_DATA.items() %}
       <li><a rel="me" href="{{ link }}">{{ text }}</a></li>
