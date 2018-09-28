@@ -1,52 +1,55 @@
     <link rel="canonical" href="{% block canonicalurl %}{{ SITEURL }}/{{output_file}}{%endblock%}" />
 
-	<link rel="apple-touch-icon" sizes="57x57" href="/extras/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/extras/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/extras/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/extras/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/extras/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/extras/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/extras/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/extras/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/extras/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/extras/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/extras/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/extras/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/extras/favicon-16x16.png">
-	<link rel="manifest" href="/extras/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/extras/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="/extras/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/extras/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/extras/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/extras/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/extras/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/extras/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/extras/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/extras/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/extras/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/extras/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/extras/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/extras/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/extras/favicon-16x16.png">
+    <link rel="manifest" href="/extras/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/extras/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Taken from https://moz.com/blog/meta-data-templates-123 -->
 
-{% if 'twitter' in AUTHOR_DATA %}
-	<!-- Twitter Card data -->
-	<meta name="twitter:card" content="summary_large_image"/>
+    {% if 'twitter' in AUTHOR_DATA %}
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@{{AUTHOR_DATA['twitter']}}" />
-	<meta name="twitter:title" content="{{ page.title() }}"/>
-	<meta name="twitter:description" content="{{ page.description() }}"/>
+    {% if article %}
+    <meta name="twitter:title" content="{{ article.title }}"/>
+    <meta name="twitter:description" content="{{ article.description }}"/>
+    {% elif page %}
+    <meta name="twitter:title" content="{{ page.title }}"/>
+    <meta name="twitter:description" content="{{ page.description }}"/>
+    {% endif %}
     <meta name="twitter:creator" content="@{{AUTHOR_DATA['twitter']}}" />
-	<!-- Twitter summary card with large image must be at least 280x150px -->
-	<meta name="twitter:image:src" content="{{ META_IMAGE }}"/>
-{% endif %}
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="{{ META_IMAGE }}"/>
+    {% endif %}
 
-	<!-- Open Graph data -->
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="{{ page.title() }}" />
-	<meta property="og:url" content="{{ self.canonicalurl() }}" />
-	<meta property="og:image" content="{{ META_IMAGE }}" />
-	<meta property="og:description" content="{{ page.description() }}" />
-	<meta property="og:site_name" content="{{ SITENAME }}" />
-	{% if article %}
-	<meta property="article:published_time" content="{{ article.date.isoformat() }}" />
-	<meta property="article:modified_time" content="{{ article.date.isoformat() }}" />
-	<meta property="article:section" content="{{ article.category }}" />
-	{% for a_tag in article.tags %}
-	<meta property="article:tag" content="{{ a_tag }}" />
-	{% endfor %}
-	{% endif %}
-	<meta property="fb:admins" content="1188604437" />
+    <!-- Open Graph data -->
+    {% if article %}
+    {% for tag in article.ogtags %}
+    <meta property="{{tag[0]}}" content="{{tag[1]|striptags|e}}" />
+    {% endfor %}
+    {% endif %}
 
-	<meta name="theme-color" content="#153a4d" />
+    {% if page  %}
+    {% for tag in page.ogtags %}
+    <meta property="{{tag[0]}}" content="{{tag[1]|striptags|e}}" />
+    {% endfor %}
+    {% endif %}
+
+    <meta property="fb:admins" content="{{FBADMINS}}" />
+
+    <meta name="theme-color" content="#153a4d" />
 

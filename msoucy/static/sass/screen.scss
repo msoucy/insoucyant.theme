@@ -99,6 +99,10 @@ article img {
 	background: #eeeeee;
 }
 
+article img.embedded {
+        background: transparent;
+}
+
 ul.posts span {
 	font-family: $monoFontFamily;
 }
