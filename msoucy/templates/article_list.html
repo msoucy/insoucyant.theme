@@ -4,10 +4,10 @@
 <article>
   <h2>
     {% if FEED_LOC_ATOM %}
-      <a href="{{SITEURL}}/{{FEED_LOC_ATOM}}" class="feed"></a>
+      <a href="/{{FEED_LOC_ATOM}}" class="feed"></a>
     {% endif %}
     {% if FEED_LOC_RSS %}
-      <a href="{{SITEURL}}/{{FEED_LOC_RSS}}" class="feed"></a>
+      <a href="/{{FEED_LOC_RSS}}" class="feed"></a>
     {% endif %}
     {% block listtitle %}{% endblock %}
   </h2>

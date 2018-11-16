@@ -277,7 +277,8 @@ blockquote {
 	padding: 0.4em 0.4em;
 	text-align: left;
 	margin: 0px 1.8em;
-	overflow: hidden;
+	overflow-x: auto;
+	overflow-y: hidden;
 }
 
 article, div.slide {
