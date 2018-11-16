@@ -1,6 +1,6 @@
-<h2 itemprop="name headline" property="name headline"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+<h2 itemprop="name headline" property="name headline"><a href="/{{ article.url }}">{{ article.title }}</a></h2>
 <div id="meta">
-    <link itemprop="mainEntityOfPage" href="{{ SITEURL }}/{{ article.url}}" />
+    <link itemprop="mainEntityOfPage" href="/{{ article.url}}" />
     <abbr class="published" title="{{ article.date.isoformat() }}"><time itemprop="datePublished" property="datePublished" datetime="{{article.date.isoformat()}}">{{ article.locale_date }}</time></abbr>
     {%- if article.modified != article.date %}
     (modified <abbr class="published" title="{{ article.date.isoformat() }}"><time itemprop="dateModified" property="dateModified" datetime="{{article.modified.isoformat()}}">{{ article.modified|strftime(article.date_format) }}</time></abbr>)
@@ -9,5 +9,5 @@
     <span itemprop="author publisher" property="author publisher" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">{{ article.author }}</span>
     </span>
-    - <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Comments</a>
+    - <a href="/{{ article.url }}#disqus_thread">Comments</a>
 </div>

@@ -7,13 +7,13 @@
     <ul>
 {% for category, arts in categories|sort %}
       <li>
-      <h3><a href="{{ SITEURL }}/category/{{ category }}.html">{{ category }}</a></h3>
+      <h3><a href="/category/{{ category }}.html">{{ category }}</a></h3>
         <ul>
           {% for article in arts[0:QUICKBAR_COUNT] %}
-          <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+          <li><a href="/{{ article.url }}">{{ article.title }}</a></li>
           {% endfor %}
           {% if arts|length > QUICKBAR_COUNT  %}
-          <li><a href="{{ SITEURL }}/category/{{ category }}.html">...</a></li>
+          <li><a href="/category/{{ category }}.html">...</a></li>
           {% endif %}
         </ul>
       </li>
@@ -25,13 +25,13 @@
     <ul>
 {% for tag, arts in tags|sort %}
       <li>
-      <h3><a href="{{ SITEURL }}/tag/{{ tag }}.html">{{ tag }}</a></h3>
+      <h3><a href="/tag/{{ tag }}.html">{{ tag }}</a></h3>
         <ul>
           {% for article in arts[0:QUICKBAR_COUNT] %}
-          <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+          <li><a href="/{{ article.url }}">{{ article.title }}</a></li>
           {% endfor %}
           {% if arts|length > QUICKBAR_COUNT  %}
-          <li><a href="{{ SITEURL }}/tag/{{ tag }}.html">...</a></li>
+          <li><a href="/tag/{{ tag }}.html">...</a></li>
           {% endif %}
         </ul>
       </li>
@@ -42,7 +42,7 @@
     <h3>seminars</h3>
     <ul>
       {% for name, loc in SEMINARS|sort %}
-      <li><a href="{{ SITEURL }}/seminars/{{ loc }}">{{ name }}</a></li>
+      <li><a href="/seminars/{{ loc }}">{{ name }}</a></li>
       {% endfor %}
     </ul>
   </li>
