@@ -4,7 +4,9 @@
 <article itemid="mainEntityOfPage" itemscope itemtype="http://schema.org/Article">
   {% include 'article_infos.html' %}
   {{ article.content }}
+  {% if article.status != "draft" %}
   {% include 'neighbors.html' %}
   {% include 'comments.html' %}
+  {% endif %}
 </article>
 {% endblock %}

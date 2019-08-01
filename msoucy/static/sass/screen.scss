@@ -12,91 +12,91 @@ $header: #75aaff;
 $default_rounded_amount: 3px;
 
 @mixin vendor-prefix($property, $value) {
-	@each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
-		#{$prefix}#{$property}: $value;
-	}
+        @each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
+                #{$prefix}#{$property}: $value;
+        }
 }
 
 @mixin round-corners($amount: $default_rounded_amount) {
-	@include vendor-prefix(border-radius, $default_rounded_amount);
+        @include vendor-prefix(border-radius, $default_rounded_amount);
 }
 
 @mixin fade-link {
-	@include vendor-prefix(transition, all 0.35s ease-in-out);
+        @include vendor-prefix(transition, all 0.35s ease-in-out);
 }
 
 ol {
-	list-style: decimal;
+        list-style: decimal;
 }
 
 ul {
-	list-style: square;
+        list-style: square;
 }
 
 ul.posts span {
-	font-size: 0.8em;
+        font-size: 0.8em;
 }
 
 pre {
-	font-size: 1em;
+        font-size: 1em;
 }
 
 #meta {
-	font-size: 0.9em;
+        font-size: 0.9em;
 }
 
 .subheadline, .slide {
-	.extra {
-		font-size: 1.4em;
-	}
-	.author {
-		font-size: 1em;
-	}
+        .extra {
+                font-size: 1.4em;
+        }
+        .author {
+                font-size: 1em;
+        }
 }
 
 
 body {
-	font-size: 1em;
-	background-image: $page-background;
-	font-family: $baseFontFamily;
+        font-size: 1em;
+        background-image: $page-background;
+        font-family: $baseFontFamily;
 }
 
 a {
-	color: $text_link_color;
-	text-decoration: none;
+        color: $text_link_color;
+        text-decoration: none;
 }
 
 article, .slide {
-	background: $content-background;
-	//border: 1px solid black;
-	p a, ul a {
-		@include fade-link;
-		font-weight: 800;
-		&:hover {
-			color: grey;
-		}
-	}
+        background: $content-background;
+        //border: 1px solid black;
+        p a, ul a {
+                @include fade-link;
+                font-weight: 800;
+                &:hover {
+                        color: grey;
+                }
+        }
 }
 
 p {
-	text-align: left;
-	padding: 0.25em 1em;
-	line-height: 1.125em;
+        text-align: left;
+        padding: 0.25em 1em;
+        line-height: 1.125em;
 }
 
 .titlepage p {
-	text-align: center;
+        text-align: center;
 }
 
 #meta {
-	text-align: center;
-	color: $head_bottom_border;
+        text-align: center;
+        color: $head_bottom_border;
 }
 
 article img {
-	padding: 1em;
-	border: 0.1em solid #aaaaaa;
-	background: #eeeeee;
+        padding: 1em;
+        border: 0.1em solid #aaaaaa;
+        background: #eeeeee;
 }
 
 article img.embedded {
@@ -104,12 +104,12 @@ article img.embedded {
 }
 
 ul.posts span {
-	font-family: $monoFontFamily;
+        font-family: $monoFontFamily;
 }
 
 .feed {
-	padding: 0 3px 0 14px;
-	background: url("/theme/images/feed-icon-14x14.png") no-repeat 0 50%;
+        padding: 0 3px 0 14px;
+        background: url("/theme/images/feed-icon-14x14.png") no-repeat 0 50%;
 }
 
 /*************************************************************************** */
@@ -119,135 +119,135 @@ ul.posts span {
 /*************************************************************************** */
 
 .title h1 {
-	margin: 0 0 0 10px;
-	font-size: 5.5em;
-	font-size: 5.5vw;
-	a {
-		color: $header;
-		margin-bottom: 20px;
-		font: {
-			weight: bold;
-			family: $monoFontFamily;
-		};
-		&:hover {
-			text-decoration: none;
-		}
-	}
+        margin: 0 0 0 10px;
+        font-size: 5.5em;
+        font-size: 5.5vw;
+        a {
+                color: $header;
+                margin-bottom: 20px;
+                font: {
+                        weight: bold;
+                        family: $monoFontFamily;
+                };
+                &:hover {
+                        text-decoration: none;
+                }
+        }
 }
 
 .subheadline {
-	div {
-		text-align: right;
-	}
-	.extra {
-		color: $quicklist_header_color;
-		text-decoration: none;
-		margin-top: 2em;
-	}
-	.author {
-		color: #246e88;
-		margin-top: 0.4em;
-	}
+        div {
+                text-align: right;
+        }
+        .extra {
+                color: $quicklist_header_color;
+                text-decoration: none;
+                margin-top: 2em;
+        }
+        .author {
+                color: #246e88;
+                margin-top: 0.4em;
+        }
 }
 
 @mixin hover-button($color: black, $bg: $bare_link_hover, $ns: italic) {
-	@include round-corners;
-	@include fade-link;
-	color: $color;
-	display: block;
-	background: $bg;
-	&:hover {
-		font-style: $ns;
-		color: white;
-		background: $header;
-	}
+        @include round-corners;
+        @include fade-link;
+        color: $color;
+        display: block;
+        background: $bg;
+        &:hover {
+                font-style: $ns;
+                color: white;
+                background: $header;
+        }
 }
 
 nav ul {
-	padding: 0px;
-	text: {
-		align: center;
-		decoration: none;
-	};
-	ul {
-		padding: 0;
-		margin: 0;
-	}
-	li {
-		ul li a {
-			@include hover-button;
-			padding: 0.25em;
-			font-size: 0.8em;
-		}
-		h3 {
-			font-size: 1.31em;
-			font-size: 1.31vw;
-			color: $header;
-			margin: 0;
-			a {
-				@include hover-button($header, rgba(0, 0, 0, 0), normal);
-			}
-		}
-	}
+        padding: 0px;
+        text: {
+                align: center;
+                decoration: none;
+        };
+        ul {
+                padding: 0;
+                margin: 0;
+        }
+        li {
+                ul li a {
+                        @include hover-button;
+                        padding: 0.25em;
+                        font-size: 0.8em;
+                }
+                h3 {
+                        font-size: 1.31em;
+                        font-size: 1.31vw;
+                        color: $header;
+                        margin: 0;
+                        a {
+                                @include hover-button($header, rgba(0, 0, 0, 0), normal);
+                        }
+                }
+        }
 }
 
 article {
-	@include round-corners;
+        @include round-corners;
 }
 
 h2 {
-	padding: 10px;
-	font-weight: normal;
-	text-align: left;
-	border-bottom: 2px solid $head_bottom_border;
-	margin: 10px 15px;
-	a {
-		color: black;
-	}
+        padding: 10px;
+        font-weight: normal;
+        text-align: left;
+        border-bottom: 2px solid $head_bottom_border;
+        margin: 10px 15px;
+        a {
+                color: black;
+        }
 }
 
 h3 {
-	font: {
-		family: $monoFontFamily;
-		weight: bold;
-	};
+        font: {
+                family: $monoFontFamily;
+                weight: bold;
+        };
 }
 
 article {
-	h1 {
-		border-bottom: 2px solid $head_bottom_border;
-	}
-	h3 {
-		margin-left: 1em;
-	}
-	.spoiler {
-		background: black;
-		border: dotted;
-		border-width: thin;
-	}
-	.spoiler:hover {
-		background: transparent;
-	}
+        h1 {
+                border-bottom: 2px solid $head_bottom_border;
+        }
+        h3, h4, h5, h6 {
+            margin-left: 1em;
+        }
+        .spoiler {
+                background: black;
+                border: dotted;
+                border-width: thin;
+        }
+        .spoiler:hover {
+                background: transparent;
+        }
 }
 
 .prevnextparts {
-	width: 100%;
+        width: 100%;
 }
 
 .prevnext {
-	div {
-		font-style: italic;
-		width: 50%;
-		display: inline;
-		overflow: hidden;
-	}
-	.prev {
-		text-align: left;
-	}
-	.next {
-		text-align: right;
-		float: right;
-	}
+        div {
+                font-style: italic;
+                width: 50%;
+                display: inline;
+                overflow: hidden;
+        }
+        .prev {
+                text-align: left;
+        }
+        .next {
+                text-align: right;
+                float: right;
+        }
 }
 
 /*************************************************************************** */
@@ -257,65 +257,65 @@ article {
 /*************************************************************************** */
 
 blockquote {
-	font: $monoFontFamily;
-	margin: 0.8em 2em;
-	padding-left: 10px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-left: 5px solid #cccccc;
-	background-color: $text_block_bgcolor;
-	p {
-		margin: 0;
-		padding: 0;
-	}
+        font: $monoFontFamily;
+        margin: 0.8em 2em;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-left: 5px solid #cccccc;
+        background-color: $text_block_bgcolor;
+        p {
+                margin: 0;
+                padding: 0;
+        }
 }
 
 .codehilite pre {
-	border: 1px solid #dddddd;
-	background-color: $text_block_bgcolor - #cccccc;
-	color: #f8f8f2;
-	padding: 0.4em 0.4em;
-	text-align: left;
-	margin: 0px 1.8em;
-	overflow-x: auto;
-	overflow-y: hidden;
+        border: 1px solid #dddddd;
+        background-color: $text_block_bgcolor - #cccccc;
+        color: #f8f8f2;
+        padding: 0.4em 0.4em;
+        text-align: left;
+        margin: 0px 1.8em;
+        overflow-x: auto;
+        overflow-y: hidden;
 }
 
 article, div.slide {
-	ul, ol {
-		list-style-type: disc;
-		text-align: left;
-	}
-	li {
-		margin-bottom: 3px;
-	}
+        ul, ol {
+                list-style-type: disc;
+                text-align: left;
+        }
+        li {
+                margin-bottom: 3px;
+        }
 }
 
 div.slide {
-	margin: auto;
+        margin: auto;
 }
 
 table {
-	margin: {
-		left: 1em;
-		right: 1em;
-	};
-	width: 95%;
+        margin: {
+                left: 1em;
+                right: 1em;
+        };
+        width: 95%;
 }
 
 th, td {
-	padding: 0.25em;
+        padding: 0.25em;
 }
 
 .sourceCode {
-	font-size: 0.85em;
+        font-size: 0.85em;
 }
 
 .slide {
-	font-size: .9em;
-	.sourceCode {
-		line-height: 0.85em;
-	}
+        font-size: .9em;
+        .sourceCode {
+                line-height: 0.85em;
+        }
 }
 
 /*************************************************************************** */
@@ -325,6 +325,6 @@ th, td {
 /*************************************************************************** */
 
 .mastodon-embed {
-	max-width: 100%;
-	border: 0;
+        max-width: 100%;
+        border: 0;
 }
