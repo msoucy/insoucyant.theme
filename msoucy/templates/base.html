@@ -7,7 +7,7 @@
     <meta name="referrer" content="no-referrer" />
     <link rel="icon" type="image/x-icon" href="/extras/favicon.ico" />
 
-    {% assets filters="pyscss,cssmin", output="css/main.css", "sass/positioning.scss", "sass/screen.scss", "sass/pygments.scss" %}
+    {% assets filters="libsass,cssmin", output="css/main.css", "sass/positioning.scss", "sass/screen.scss", "sass/pygments.scss" %}
     <link rel="stylesheet" href="/{{ ASSET_URL }}">
     {% endassets %}
 
